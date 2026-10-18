@@ -145,3 +145,20 @@ test('blocked browser storage leaves the reading list usable for this visit', as
     }),
   ).toBeTruthy();
 });
+
+test('the header notification opens its book in the existing detail view', async () => {
+  const user = userEvent.setup();
+  render(<App />);
+  await user.click(
+    screen.getByRole('button', { name: 'Notifications, 3 unread' }),
+  );
+  await user.click(
+    within(screen.getByRole('dialog')).getByRole('button', {
+      name: 'View book',
+    }),
+  );
+  expect(
+    screen.getByRole('heading', { name: 'The Creative Act', level: 1 }),
+  ).toBeTruthy();
+  expect(screen.queryByRole('dialog')).toBeNull();
+});

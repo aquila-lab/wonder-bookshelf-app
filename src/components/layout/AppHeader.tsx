@@ -1,4 +1,4 @@
-import type { Ref } from 'react';
+import type { ReactNode, Ref } from 'react';
 import type { LibraryView } from '../../types/book';
 import { BrandMark, Button, SearchField } from '../ui';
 
@@ -11,6 +11,7 @@ export interface AppHeaderProps {
   onAddBook: () => void;
   headerRef?: Ref<HTMLElement>;
   searchRef?: Ref<HTMLInputElement>;
+  notificationControl?: ReactNode;
 }
 
 export function AppHeader({
@@ -22,6 +23,7 @@ export function AppHeader({
   onAddBook,
   headerRef,
   searchRef,
+  notificationControl,
 }: AppHeaderProps) {
   return (
     <header ref={headerRef} className="topbar">
@@ -60,16 +62,19 @@ export function AppHeader({
         onValueChange={onQueryChange}
         onSubmit={onSearchSubmit}
       />
-      <Button
-        className="add-book"
-        variant="primary"
-        size="md"
-        startIcon="plus"
-        aria-label="Add book"
-        onClick={onAddBook}
-      >
-        <span>Add book</span>
-      </Button>
+      <div className="header-actions">
+        <Button
+          className="add-book"
+          variant="primary"
+          size="md"
+          startIcon="plus"
+          aria-label="Add book"
+          onClick={onAddBook}
+        >
+          <span>Add book</span>
+        </Button>
+        {notificationControl}
+      </div>
     </header>
   );
 }

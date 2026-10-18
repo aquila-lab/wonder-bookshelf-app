@@ -17,6 +17,12 @@ export const iconPaths = {
   down: <path d="m5 8 5 5 5-5" />,
   close: <path d="m5 5 10 10M15 5 5 15" />,
   bookmark: <path d="M5 3h10v15l-5-4-5 4V3Z" />,
+  bell: (
+    <>
+      <path d="M15 6.7a5 5 0 0 0-10 0c0 5.8-2.5 7.5-2.5 7.5h15S15 12.5 15 6.7Z" />
+      <path d="M11.4 17.5a1.7 1.7 0 0 1-2.8 0" />
+    </>
+  ),
   grid: (
     <>
       <rect x="4" y="4" width="5" height="5" rx="1" />

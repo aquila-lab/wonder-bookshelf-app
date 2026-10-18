@@ -164,3 +164,9 @@
   background: none;
   border: 0;
 }
+.badge[data-size='counter'] {
+  min-width: var(--size-icon-md);
+  height: var(--size-icon-md);
+  padding: 0 var(--space-1);
+  font-variant-numeric: tabular-nums;
+}

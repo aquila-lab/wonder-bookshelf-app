@@ -99,6 +99,7 @@
   --layout-results-min: 312px;
   --layout-detail-max: 640px;
   --layout-search-status-offset: -30px;
+  --layout-notification-width: 440px;
   --grid-columns-wide: 6;
   --grid-columns-desktop: 4;
   --grid-columns-tablet: 3;
@@ -109,6 +110,7 @@
 
   --motion-skeleton-duration: 1.6s;
   --motion-skeleton-easing: ease-in-out;
+  --motion-notification-duration: 180ms;
   --opacity-skeleton-min: 0.55;
   --opacity-disabled: 0.5;
   --hover-brightness: 1.15;
@@ -147,6 +149,7 @@
   --color-toast-background: #252525;
   --color-shadow: #00000066;
   --color-skeleton: #222222;
+  --color-notification-unread: #d9b56d;
 }
 
 /* Explicit themes also work on a component's wrapper for isolated previews. */
@@ -173,6 +176,7 @@
     --color-toast-background: #ffffff;
     --color-shadow: #0000001a;
     --color-skeleton: #e5e5e5;
+    --color-notification-unread: #8b691b;
   }
 }
 
@@ -198,4 +202,5 @@
   --color-toast-background: #ffffff;
   --color-shadow: #0000001a;
   --color-skeleton: #e5e5e5;
+  --color-notification-unread: #8b691b;
 }
