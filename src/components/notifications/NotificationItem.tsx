@@ -64,26 +64,28 @@ export function NotificationItem({
           )}
         </div>
         <p className="notification-item-message">{notification.message}</p>
-        <div className="notification-item-actions">
-          <Button
-            className="notification-action"
-            variant="link"
-            endIcon={
-              notification.kind === 'release' ||
-              notification.kind === 'reminder'
-                ? 'arrow'
-                : undefined
-            }
-            onClick={() => onActivate(notification)}
-          >
-            {notificationActions[notification.kind]}
-          </Button>
-          {notification.kind === 'reminder' && (
-            <Button variant="link" onClick={() => onSnooze(notification.id)}>
-              Remind me later
+        {notification.kind !== 'milestone' && (
+          <div className="notification-item-actions">
+            <Button
+              className="notification-action"
+              variant="link"
+              endIcon={
+                notification.kind === 'release' ||
+                notification.kind === 'reminder'
+                  ? 'arrow'
+                  : undefined
+              }
+              onClick={() => onActivate(notification)}
+            >
+              {notificationActions[notification.kind]}
             </Button>
-          )}
-        </div>
+            {notification.kind === 'reminder' && (
+              <Button variant="link" onClick={() => onSnooze(notification.id)}>
+                Remind me later
+              </Button>
+            )}
+          </div>
+        )}
       </div>
     </article>
   );

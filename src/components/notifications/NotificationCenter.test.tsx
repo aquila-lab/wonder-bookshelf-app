@@ -100,7 +100,9 @@ test('preferences are functional, reminders require opt-in, and milestone action
   await user.click(
     screen.getByRole('button', { name: 'Back to notifications' }),
   );
-  await user.click(screen.getByRole('button', { name: 'View progress' }));
+  await user.click(
+    screen.getByRole('button', { name: 'Three books, one good habit.' }),
+  );
   expect(screen.getByRole('dialog', { name: 'Reading progress' })).toBeTruthy();
   expect(screen.getByText(/Sample reading goal/)).toBeTruthy();
   expect(screen.getByRole('progressbar').getAttribute('value')).toBe('3');
