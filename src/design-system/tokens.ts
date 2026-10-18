@@ -113,6 +113,7 @@ export const tokens = {
     resultsMin: 'var(--layout-results-min)',
     detailMax: 'var(--layout-detail-max)',
     searchStatusOffset: 'var(--layout-search-status-offset)',
+    notificationWidth: 'var(--layout-notification-width)',
   },
   grid: {
     columnsWide: 'var(--grid-columns-wide)',
@@ -128,6 +129,7 @@ export const tokens = {
   motion: {
     skeletonDuration: 'var(--motion-skeleton-duration)',
     skeletonEasing: 'var(--motion-skeleton-easing)',
+    notificationDuration: 'var(--motion-notification-duration)',
   },
   opacity: {
     skeletonMin: 'var(--opacity-skeleton-min)',
@@ -165,6 +167,7 @@ export const tokens = {
     toastBackground: 'var(--color-toast-background)',
     shadow: 'var(--color-shadow)',
     skeleton: 'var(--color-skeleton)',
+    notificationUnread: 'var(--color-notification-unread)',
   },
 } as const;
 

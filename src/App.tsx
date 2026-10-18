@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { AppHeader, BookDetails, LibrarySidebar, Toast } from './components';
+import {
+  AppHeader,
+  BookDetails,
+  LibrarySidebar,
+  NotificationCenter,
+  Toast,
+} from './components';
 import { CollectionView } from './features/library/CollectionView';
 import { useBookDetails } from './hooks/useBookDetails';
 import { useBookSearch } from './hooks/useBookSearch';
@@ -85,6 +91,13 @@ export function App() {
         }}
         onSearchSubmit={() => setSelected(null)}
         onAddBook={startSearch}
+        notificationControl={
+          <NotificationCenter
+            books={library.books}
+            onOpenBook={openBook}
+            onBrowse={() => navigate('browse')}
+          />
+        }
       />
       <div className="workspace">
         <LibrarySidebar

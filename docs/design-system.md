@@ -47,36 +47,43 @@ export function ButtonPreview({ theme }: { theme: Theme }) {
 
 ## Public component inventory
 
-All components are named exports from `src/components/index.ts`, with their prop types. Source files are the definitions to reference when importing into Wonder; adjacent `ui.css`, `books.css`, and `layout.css` files define their appearance.
+All components are named exports from `src/components/index.ts`, with their prop types. Source files are the definitions to reference when importing into Wonder; adjacent `ui.css`, `books.css`, `layout.css`, and `notifications.css` files define their appearance.
 
-| Component           | Source                                       | Variants and useful states                                                                                                      |
-| ------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `Button`            | `src/components/ui/Button.tsx`               | `variant`: primary, secondary (default), ghost, link; `size`: sm (default), md, lg; optional start/end icons, disabled, pressed |
-| `IconButton`        | `src/components/ui/IconButton.tsx`           | surface (default) or ghost; sm or md (default); required accessible label                                                       |
-| `Badge`             | `src/components/ui/Badge.tsx`                | subtle (default) or solid; noninteractive label                                                                                 |
-| `Icon`              | `src/components/ui/Icon.tsx`                 | sm, md (default), lg; nine typed icon names                                                                                     |
-| `BrandMark`         | `src/components/ui/BrandMark.tsx`            | Original Bookshelf mark                                                                                                         |
-| `SearchField`       | `src/components/ui/SearchField.tsx`          | Controlled value, clear, submit, label, placeholder, input ref                                                                  |
-| `EmptyState`        | `src/components/ui/EmptyState.tsx`           | Title, description, optional action                                                                                             |
-| `Toast`             | `src/components/ui/Toast.tsx`                | Polite live announcement; an empty message hides it                                                                             |
-| `BookCover`         | `src/components/books/BookCover.tsx`         | Image, absent image, failed image fallback                                                                                      |
-| `BookCard`          | `src/components/books/BookCard.tsx`          | Saved/unsaved; separate open and save actions                                                                                   |
-| `BookSkeleton`      | `src/components/books/BookSkeleton.tsx`      | Loading geometry matching a card                                                                                                |
-| `BookGrid`          | `src/components/books/BookGrid.tsx`          | Loading, populated, empty; responsive columns                                                                                   |
-| `BookListItem`      | `src/components/books/BookListItem.tsx`      | compact (default) sidebar item or summary reading-list item                                                                     |
-| `ReadingListButton` | `src/components/books/ReadingListButton.tsx` | Add button or saved state with a native remove menu                                                                             |
-| `GenreFilter`       | `src/components/books/GenreFilter.tsx`       | Selected genre; collapsed/expanded list                                                                                         |
-| `BookDetails`       | `src/components/books/BookDetails.tsx`       | Description loading/error/missing; saved/unsaved; optional metadata                                                             |
-| `AppHeader`         | `src/components/layout/AppHeader.tsx`        | Browse/saved view, controlled search, add action                                                                                |
-| `LibrarySidebar`    | `src/components/layout/LibrarySidebar.tsx`   | Browse/saved selection, counts, up-next items                                                                                   |
+| Component            | Source                                                | Variants and useful states                                                                                                      |
+| -------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `Button`             | `src/components/ui/Button.tsx`                        | `variant`: primary, secondary (default), ghost, link; `size`: sm (default), md, lg; optional start/end icons, disabled, pressed |
+| `IconButton`         | `src/components/ui/IconButton.tsx`                    | surface (default) or ghost; sm or md (default); required accessible label                                                       |
+| `Badge`              | `src/components/ui/Badge.tsx`                         | subtle (default) or solid; sm or counter size; noninteractive label                                                             |
+| `Icon`               | `src/components/ui/Icon.tsx`                          | sm, md (default), lg; ten typed icon names                                                                                      |
+| `BrandMark`          | `src/components/ui/BrandMark.tsx`                     | Original Bookshelf mark                                                                                                         |
+| `SearchField`        | `src/components/ui/SearchField.tsx`                   | Controlled value, clear, submit, label, placeholder, input ref                                                                  |
+| `EmptyState`         | `src/components/ui/EmptyState.tsx`                    | Title, description, optional icon and action                                                                                    |
+| `Toast`              | `src/components/ui/Toast.tsx`                         | Polite live announcement; message or notification variant with children; empty content hides it                                 |
+| `BookCover`          | `src/components/books/BookCover.tsx`                  | Image, absent image, failed image fallback                                                                                      |
+| `BookCard`           | `src/components/books/BookCard.tsx`                   | Saved/unsaved; separate open and save actions                                                                                   |
+| `BookSkeleton`       | `src/components/books/BookSkeleton.tsx`               | Loading geometry matching a card                                                                                                |
+| `BookGrid`           | `src/components/books/BookGrid.tsx`                   | Loading, populated, empty; responsive columns                                                                                   |
+| `BookListItem`       | `src/components/books/BookListItem.tsx`               | compact (default) sidebar item or summary reading-list item                                                                     |
+| `ReadingListButton`  | `src/components/books/ReadingListButton.tsx`          | Add button or saved state with a native remove menu                                                                             |
+| `GenreFilter`        | `src/components/books/GenreFilter.tsx`                | Selected genre; collapsed/expanded list                                                                                         |
+| `BookDetails`        | `src/components/books/BookDetails.tsx`                | Description loading/error/missing; saved/unsaved; optional metadata                                                             |
+| `AppHeader`          | `src/components/layout/AppHeader.tsx`                 | Browse/saved view, controlled search, add action, optional notification control                                                 |
+| `LibrarySidebar`     | `src/components/layout/LibrarySidebar.tsx`            | Browse/saved selection, counts, up-next items                                                                                   |
+| `NotificationCenter` | `src/components/notifications/NotificationCenter.tsx` | Stateful composition: persistence, focus, navigation, arrival toast, development trigger                                        |
+| `NotificationBell`   | `src/components/notifications/NotificationBell.tsx`   | Closed/open; zero, unread count, 9+ badge                                                                                       |
+| `NotificationPanel`  | `src/components/notifications/NotificationPanel.tsx`  | Today/Earlier, All/Unread, caught-up, preferences, milestone detail                                                             |
+| `NotificationItem`   | `src/components/notifications/NotificationItem.tsx`   | Release, reminder, milestone, system; read/unread; cover or brand mark                                                          |
+| `NotificationToast`  | `src/components/notifications/NotificationToast.tsx`  | Arrival with book action, dismissal, hover/focus pause                                                                          |
 
 The screen composition is `src/features/library/CollectionView.tsx`; `src/App.tsx` connects it to application state. Presentational components do not read localStorage or fetch data. Use `Book` from `src/types/book.ts` and pass callbacks to connect interactions. The hooks own persistence, request cancellation, debounce, caching, and timeouts.
+
+The quiet notification design composes the existing `BookCover`, `Button`, `IconButton`, `Badge`, `EmptyState`, `Toast`, and `BrandMark`. Its new semantic accent is `--color-notification-unread`, with values for both themes; width and entry motion use `--layout-notification-width` and `--motion-notification-duration`. Example activity lives in `src/data/initialNotifications.ts`; `useNotifications` owns its validated local persistence and delivery preferences.
 
 ## Data and icons for importing
 
 Use `src/data/initialBooks.ts` for reproducible, offline examples. `creative-act` has a subtitle, edition, description, publisher, date, page count, ISBN, and multiple categories, making it a useful detail-screen fixture. `atomic-habits` starts unsaved; `creative-act` and `midnight-library` start saved. For a missing-cover state, pass a copy of a book with `cover: undefined`. Loading and error states can be supplied through component props without calling the API.
 
-Use the original SVG geometry in `iconPaths` from `src/components/ui/Icon.tsx`: plus, check, search, arrow, back, down, close, bookmark, and grid. The mark is in `BrandMark.tsx`. Icon sizes and stroke width reference the shared tokens.
+Use the SVG geometry in `iconPaths` from `src/components/ui/Icon.tsx`: plus, check, search, arrow, back, down, close, bookmark, grid, and bell. The mark is in `BrandMark.tsx`. Icon sizes and stroke width reference the shared tokens.
 
 ## Working in Wonder
 
