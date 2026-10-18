@@ -12,16 +12,6 @@ export const initialBooks: Book[] = [
       'A practical guide to building good habits, breaking bad ones, and making small changes that last.',
   },
   {
-    id: 'crying-in-h-mart',
-    title: 'Crying in H Mart',
-    author: 'Michelle Zauner',
-    genre: 'Memoir',
-    categories: ['Memoir'],
-    cover: '/covers/crying-in-h-mart.jpg',
-    description:
-      'Michelle Zauner reflects on family, food, grief, and her Korean American identity.',
-  },
-  {
     id: 'art-of-noticing',
     title: 'The Art of Noticing',
     author: 'Rob Walker',
@@ -30,6 +20,16 @@ export const initialBooks: Book[] = [
     cover: '/covers/art-of-noticing.jpg',
     description:
       'An invitation to pay attention, spark curiosity, and rediscover the world around you through small creative exercises.',
+  },
+  {
+    id: 'crying-in-h-mart',
+    title: 'Crying in H Mart',
+    author: 'Michelle Zauner',
+    genre: 'Memoir',
+    categories: ['Memoir'],
+    cover: '/covers/crying-in-h-mart.jpg',
+    description:
+      'Michelle Zauner reflects on family, food, grief, and her Korean American identity.',
   },
   {
     id: 'creative-act',
