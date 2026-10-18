@@ -1,0 +1,100 @@
+:root {
+  font-family: var(--font-family-sans);
+  font-feature-settings: var(--font-features);
+  color: var(--color-foreground);
+  background: var(--color-background);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+[data-theme] {
+  color: var(--color-foreground);
+  background: var(--color-background);
+}
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/InterVariable.woff2') format('woff2');
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scrollbar-gutter: stable;
+}
+body {
+  margin: 0;
+  min-width: var(--layout-page-min);
+}
+button,
+input,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+input {
+  font: inherit;
+  font-feature-settings: var(--font-features);
+}
+button,
+a {
+  color: inherit;
+}
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+button:disabled {
+  cursor: default;
+}
+a {
+  text-decoration: none;
+}
+button:not(:disabled):hover {
+  filter: brightness(var(--hover-brightness));
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus);
+  outline-offset: var(--focus-offset);
+}
+main:focus {
+  outline: none;
+}
+h1,
+h2,
+p {
+  margin: 0;
+}
+h1,
+h2,
+strong {
+  font-weight: var(--font-weight-regular);
+}
+h2 {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-section);
+}
+svg {
+  flex-shrink: 0;
+}
+small,
+.small {
+  font-size: var(--font-size-xs);
+}
+.muted {
+  color: var(--color-secondary);
+}
+html {
+  scroll-padding-block-start: calc(
+    var(--app-header-height, var(--layout-header-height)) + var(--space-2)
+  );
+}
