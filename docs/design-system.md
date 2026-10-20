@@ -89,7 +89,7 @@ Use the SVG geometry in `iconPaths` from `src/components/ui/Icon.tsx`: plus, che
 
 1. Connect this repository to the Wonder design file, or use the checkout with a worktree agent.
 2. Import the foundation from `tokens.css` before the components. Use the actual values for the selected theme and preserve the semantic names. Color, dimension, plain-number, font-family, and font-weight tokens map to Wonder variables. Compound CSS expressions such as shadows, aspect ratios, font features, and easing remain code styles; bind their supported constituents where needed.
-3. Import the needed component definitions from the inventory, using their styles, seed data, and repository icons. Associate the resulting design elements with the actual component source using Wonder's repository references (`data-github-reference`). The component's props define its variants; the inventory is documentation, not a proprietary import manifest.
+3. Import the needed component definitions from the inventory, using their styles, seed data, and repository icons. The component's props define its variants; the inventory is documentation, not a proprietary import manifest.
 4. Compose screens from those imported components. When bringing a change back to code, update a token or extend a component's props/variants so the application and imported library continue to share one implementation.
 
 No Wonder file or canvas library is created by installing this app. The source is prepared for a separate import into the file you choose.
